@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-header: #F8F8FF;
+  --color-header-p:#E45858;
+  --color-header-h1:linear-gradient(0deg, #121214, #121214);
+  --color-header-h1-span: #6246EA;
+
+  --border-content-input:#EAEAEA;
+  --bg-content-input:#FFFFFF ;
+  --bg-content-input-button:#6246EA;
+
+  --bg-article:#FFFFFF ;
+  --border-article:#EAEAEA;
+  --color-article-h1: #121214;
+  --color-article-p: rgba(0, 0, 0, 0.75);
+
+
+  --bg-input:#F4F4FF;
+  --color-input:#7C7C8A;
+
+  --color-title-main: #121214;
+  --border-button-select: #EAEAEA;
+  --bg-button-select-2: #6246EA;
+  --bg-button-select-1: #FFFFFF;
+  --color-button-select-1:#6246EA;
+  --color-button-select-2:#FFFFFF ;
+
+
+}
+
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+  border-color: none;
+}
