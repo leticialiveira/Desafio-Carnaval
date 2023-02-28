@@ -1,23 +1,23 @@
 <script >
 import { ref } from 'vue'
-import  jsonCard from "../mock/cards.json"
+import jsonCard from "../mock/cards.json"
 
 
-  console.table(jsonCard);
-  const name = ref('')
-  const city = ref('')
-  
-  let result = jsonCard.filter((item) => {
-    return(item.title.includes(name.value) &&
-    item.city.includes(city.value)) 
-    // if(item.title.includes('name.value') && item.address.includes('city.value')){
-    //   return item
-    // } else {
-    //   return 'erro'
-    // }
-    
-  })
-  console.log(result[0].title + ' ' + result[0].address) 
+const Name = ref('')
+const city = ref('')
+console.log(Name.value);
+// let filteredCards = ref(jsonCard)
+
+
+
+// let result = filteredCards.value.filter((item) => item.title.includes(Name.value)  && item.address.includes(city.value))
+// console.log(result);
+
+// if (result.length > 0) {
+//   console.log(result[0].title + ' ' + result[0].address)
+// } else {
+//   console.log('erro')
+// }
 </script>
 <template>
   <header>
@@ -25,32 +25,27 @@ import  jsonCard from "../mock/cards.json"
       <p>FIND YOUR BLOCK</p>
       <h1>Encontre os <span> melhores blocos </span> de carnaval de 2023</h1>
     </div>
-      <form id="app">
-        <div class="content-input-name">
-            <input
-            type="text"
-            name="name"
-            id="name"
-            v-model="name"
-            placeholder="Pesquise por nome">
-            <img src="../assets/icons/Vector.png" alt="" />
-          </div>
-          <div class="content-input-city">
-            <select id="city" name="cidade" v-model="city">
-              <option value="">Selecione uma cidade</option>
-              <option value="Salvador-BA">Salvador-BA</option>
-              <option value="São Paulo-SP">São Paulo-SP</option>
-              <option value="Florianópolis-SC">Florianópolis-SC</option>
-              <option value="Curitiba-PR">Curitiba-PR</option>
-              <option value="Rio de Janeiro-RJ">Rio de Janeiro-RJ</option>
-              <option value="Porto Alegre-RS">Porto Alegre-RS</option>
-            </select>
-            <img src="../assets/icons/Vector (2).png" alt="" />
-          </div>
-          <button id="button">BUSCAR AGORA</button>
-        </form>
-        <p id="titleBody">name is: {{ name }}</p>
-        <p id="descriptionBody">city is: {{ city }}</p>
+    <form id="app">
+      <div class="content-input-name">
+        <input type="text" name="name" id="name" v-model="Name"  placeholder="Pesquise por nome">
+        <img src="../assets/icons/Vector.png" alt="" />
+      </div>
+      <div class="content-input-city">
+        <select id="city" name="cidade" v-model="city">
+          <option value="">Selecione uma cidade</option>
+          <option value="Salvador-BA">Salvador-BA</option>
+          <option value="São Paulo-SP">São Paulo-SP</option>
+          <option value="Florianópolis-SC">Florianópolis-SC</option>
+          <option value="Curitiba-PR">Curitiba-PR</option>
+          <option value="Rio de Janeiro-RJ">Rio de Janeiro-RJ</option>
+          <option value="Porto Alegre-RS">Porto Alegre-RS</option>
+        </select>
+        <img src="../assets/icons/Vector (2).png" alt="" />
+      </div>
+      <button id="button">BUSCAR AGORA</button>
+    </form>
+    <p id="titleBody">name is: {{ Name }} </p>
+    <p id="descriptionBody">city is: {{ city }}</p>
     <div class="image-1">
       <img src="../assets/img/g8.png" alt="" />
     </div>
@@ -98,7 +93,7 @@ header .content h1 span {
   color: var(--color-header-h1-span);
 }
 
-header form  {
+header form {
   background-color: var(--bg-content-input);
   border: 1px solid var(--border-content-input);
   border-radius: 10px;
@@ -157,6 +152,7 @@ header form .content-input-city img {
   left: 10px;
   bottom: 15px;
 }
+
 header form button {
   background-color: var(--bg-content-input-button);
   width: 169px;
