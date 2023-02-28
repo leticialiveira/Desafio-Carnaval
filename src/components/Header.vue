@@ -1,23 +1,9 @@
-<script >
-import { ref } from 'vue'
-import  jsonCard from "../mock/cards.json"
-
-
-  console.table(jsonCard);
-  const name = ref('')
-  const city = ref('')
-  
-  let result = jsonCard.filter((item) => {
-    return(item.title.includes(name.value) &&
-    item.city.includes(city.value)) 
-    // if(item.title.includes('name.value') && item.address.includes('city.value')){
-    //   return item
-    // } else {
-    //   return 'erro'
-    // }
-    
+<script setup>
+  defineProps({
+    name: String,
+    city: String
   })
-  console.log(result[0].title + ' ' + result[0].address) 
+// defineEmits(['update:name', 'update:city'])
 </script>
 <template>
   <header>
@@ -27,16 +13,11 @@ import  jsonCard from "../mock/cards.json"
     </div>
       <form id="app">
         <div class="content-input-name">
-            <input
-            type="text"
-            name="name"
-            id="name"
-            v-model="name"
-            placeholder="Pesquise por nome">
+            <input id="name" type="text" v-bind="name" placeholder="Pesquise por nome">
             <img src="../assets/icons/Vector.png" alt="" />
           </div>
           <div class="content-input-city">
-            <select id="city" name="cidade" v-model="city">
+            <select id="city" name="cidade" v-bind="city" >
               <option value="">Selecione uma cidade</option>
               <option value="Salvador-BA">Salvador-BA</option>
               <option value="São Paulo-SP">São Paulo-SP</option>

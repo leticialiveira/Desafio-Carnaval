@@ -3,16 +3,18 @@
         image: String,
         title: String,
         description: String,
-        address: String
+        address: String,
+        link: String
     })
 
-</script>l
+</script>
 
 <template>    
     <article>
         <img :src='image' alt="" />
         <header>
-            <h1>{{ title }}</h1>
+            <a v-bind:href='link'>{{ title }}</a>
+            <!-- <h1>{{ title }}</h1> -->
             <p>{{ description }}</p>
         </header>
         <footer>
@@ -44,11 +46,12 @@ article img {
 article header {
     padding-left: 15px;
 }
-article header h1 {
+article header a {
     color: var(--color-article-h1);
     font-weight: 700;
     font-size: 20px;
     padding-bottom: 10px;
+    text-decoration: none;
 }
 
 article header p {
