@@ -11,8 +11,9 @@ import jsonCard from "./mock/cards.json"
   <div class="main">
     <Lists />
     <div class="grid-cards">
-      <CardVue v-for="item in jsonCard" :key="item.title"  :title="item.title" :description="item.description" :address="item.address" :image="item.image" />
-  </div>
+      <CardVue v-for="item in jsonCard" :key="item.title" :title="item.title" :description="item.description"
+        :address="item.address" :image="item.image" />
+    </div>
   </div>
 </template>
 
@@ -26,10 +27,11 @@ import jsonCard from "./mock/cards.json"
   background-color: var(--bg-content-input);
   /* border: solid 1px red; */
 }
+
 .grid-cards {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    width: 100%;
-    height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  height: auto;
 }
 </style>
