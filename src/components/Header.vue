@@ -3,7 +3,11 @@
     name: String,
     city: String
   })
-// defineEmits(['update:name', 'update:city'])
+  defineEmits(['update:name', 'update:city'])
+
+  function handlerButton() {
+    console.log('clicou!');
+  }
 </script>
 <template>
   <header>
@@ -13,22 +17,22 @@
     </div>
       <form id="app">
         <div class="content-input-name">
-            <input id="name" type="text" v-bind="name" placeholder="Pesquise por nome">
+            <input id="name" type="text" @input="$emit('update:name', $event.target.value)" :value="name" placeholder="Pesquise por nome">
             <img src="../assets/icons/Vector.png" alt="" />
           </div>
           <div class="content-input-city">
-            <select id="city" name="cidade" v-bind="city" >
+            <select id="city" name="cidade" @input="$emit('update:city', $event.target.value)" :value="city" >
               <option value="">Selecione uma cidade</option>
-              <option value="Salvador-BA">Salvador-BA</option>
-              <option value="São Paulo-SP">São Paulo-SP</option>
-              <option value="Florianópolis-SC">Florianópolis-SC</option>
-              <option value="Curitiba-PR">Curitiba-PR</option>
-              <option value="Rio de Janeiro-RJ">Rio de Janeiro-RJ</option>
-              <option value="Porto Alegre-RS">Porto Alegre-RS</option>
+              <option value="Salvador - BA">Salvador - BA</option>
+              <option value="São Paulo - SP">São Paulo - SP</option>
+              <option value="Florianópolis - SC">Florianópolis - SC</option>
+              <option value="Curitiba - PR">Curitiba - PR</option>
+              <option value="Rio de Janeiro - RJ">Rio de Janeiro - RJ</option>
+              <option value="Porto Alegre - RS">Porto Alegre - RS</option>
             </select>
-            <img src="../assets/icons/Vector (2).png" alt="" />
+            <img src="../assets/icons/Vector(2).png" alt="" />
           </div>
-          <button id="button">BUSCAR AGORA</button>
+          <button id="button" class="submit" type="submit" value="Submit" @click.prevent="handlerButton" >BUSCAR AGORA</button>
         </form>
         <p id="titleBody">name is: {{ name }}</p>
         <p id="descriptionBody">city is: {{ city }}</p>

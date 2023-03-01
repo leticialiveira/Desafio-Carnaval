@@ -13,7 +13,7 @@
     <article>
         <img :src='image' alt="" />
         <header>
-            <a v-bind:href='link'>{{ title }}</a>
+            <a :href='link'>{{ title }}</a>
             <!-- <h1>{{ title }}</h1> -->
             <p>{{ description }}</p>
         </header>
