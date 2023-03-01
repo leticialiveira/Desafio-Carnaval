@@ -30,7 +30,7 @@
               <option value="Rio de Janeiro - RJ">Rio de Janeiro - RJ</option>
               <option value="Porto Alegre - RS">Porto Alegre - RS</option>
             </select>
-            <img src="../assets/icons/Vector(2).png" alt="" />
+            <img src="../assets/icons/Vector_gps.png" alt="" />
           </div>
           <button id="button" class="submit" type="submit" value="Submit" @click.prevent="handlerButton" >BUSCAR AGORA</button>
         </form>

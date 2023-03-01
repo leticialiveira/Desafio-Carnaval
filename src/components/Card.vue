@@ -18,7 +18,7 @@
             <p>{{ description }}</p>
         </header>
         <footer>
-            <img src="../assets/icons/Vector (2).png" alt="icon endereço" />
+            <img src="../assets/icons/Vector_gps.png" alt="icon endereço" />
             <p>{{ address }}</p>
         </footer>
     </article>
