@@ -34,9 +34,9 @@
           </div>
           <button id="button" class="submit" type="submit" value="Submit" @click.prevent="handlerButton" >BUSCAR AGORA</button>
         </form>
-        <p id="titleBody">name is: {{ name }}</p>
-        <p id="descriptionBody">city is: {{ city }}</p>
-    <div class="image-1">
+        <!-- <p id="titleBody">name is: {{ name }}</p> -->
+        <!-- <p id="descriptionBody">city is: {{ city }}</p> -->
+    <div class="image-1"> 
       <img src="../assets/img/g8.png" alt="" />
     </div>
     <div class="image-2">
