@@ -4,8 +4,36 @@ import Lists from "./components/Main.vue";
 import CardVue from "./components/Card.vue";
 import jsonCard from "./mock/cards.json";
 import { ref } from "vue";
+import axios from "axios";
 
-  
+
+
+// O axios se utiliza usando alguns parametros:
+// - method: GET, POST, PUT, DELETE
+// - url: url da requisição
+// - data: dados a serem enviados
+// - config: configurações da requisição
+// - headers: configurações de headers
+// - params: configurações de parametros
+
+// - GET -> requisição GET - Você pega o JSON
+// - POST -> requisição POST - Você envia o JSON
+// - PUT -> requisição PUT - Você atualiza o JSON
+// - DELETE -> requisição DELETE - Você deleta o JSON
+
+// Aqui estamos pegando o JSON do servidor e transformando em um array de objetos
+// axios.get -> pega o JSON do servidor e transforma em um array de objetos
+
+// Estamos acessando o json que esta dentro dessa URL
+// Se a requisição não der erro, ele vai entrar dentro do .then
+
+axios.get("https://api.tvmaze.com/shows")
+.then((response) => {
+  // Aqui a gente pega o resultado do JSON, que é o próprio JSON
+  // Se você abrir o site e da console, você vai ver o que está dentro do JSON
+  console.log(response.data);
+});
+  // 240 array
   const name = ref("");
   const city = ref("");
   let filteredCards = ref(jsonCard);
