@@ -31,8 +31,11 @@ axios.get("https://api.tvmaze.com/shows")
 .then((response) => {
   // Aqui a gente pega o resultado do JSON, que é o próprio JSON
   // Se você abrir o site e da console, você vai ver o que está dentro do JSON
-  console.log(response.data);
-});
+  console.log(response.data[0]);
+}) 
+.catch((error) => {
+  console.log(error);
+})
   // 240 array
   const name = ref("");
   const city = ref("");
